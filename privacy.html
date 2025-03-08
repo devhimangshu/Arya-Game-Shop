@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Arya Game Shop</title>
+    <style>
+        :root {
+            --primary: #8A2BE2;    /* Vibrant Purple */
+            --secondary: #20B2AA;  /* Light Sea Green */
+            --accent: #FF6B6B;     /* Soft Red */
+            --dark: #2C3E50;      /* Deep Blue Gray */
+            --light: #F8F9FA;     /* Off White */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--light) 0%, #ffffff 100%);
+            color: var(--dark);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        h1 {
+            margin: 1.5rem 0 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Dropdown Sections */
+        .dropdown-section {
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-header {
+            padding: 1.5rem 2rem;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .dropdown-header::before {
+            content: '▶';
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-header:hover {
+            background: var(--secondary);
+        }
+
+        input[type="checkbox"]:checked + .dropdown-header::before {
+            transform: rotate(90deg);
+        }
+
+        .dropdown-content {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        input[type="checkbox"]:checked + .dropdown-header + .dropdown-content {
+            max-height: 2000px;
+            padding: 2rem;
+        }
+
+        /* Content Styling */
+        h2, h3 {
+            color: var(--dark);
+            margin: 2rem 0 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        li {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            main {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .dropdown-header {
+                padding: 1rem;
+                font-size: 1rem;
+            }
+
+            .dropdown-content {
+                padding: 0 1rem;
+            }
+
+            input[type="checkbox"]:checked + .dropdown-header + .dropdown-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 3rem 1rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            li {
+                padding: 0.8rem;
+                padding-left: 2rem;
+            }
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://aryagameshop.in/logo.png" alt="Logo" class="logo">
+        <h1>Arya Game Shop</h1>
+    </header>
+
+    <main>
+         <h2>Privacy Policy</h2>
+
+        <p>We collect the minimum amount of information about you that is commensurate with providing you with a satisfactory service. This policy indicates the type of processes that may result in data being collected about you. Your use of this website gives us the right to collect that information.</p>
+
+        <div class="dropdown-section">
+            <input type="checkbox" id="info-collected">
+            <label for="info-collected" class="dropdown-header">Information Collected</label>
+            <div class="dropdown-content">
+                <p>We may collect any or all of the information that you give us depending on the type of transaction you enter into, including:</p>
+                <ul>
+                    <li>Your name</li>
+                    <li>Address</li>
+                    <li>Telephone number</li>
+                    <li>Email address</li>
+                    <li>Data about your use of the website</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown-section">
+            <input type="checkbox" id="info-use">
+            <label for="info-use" class="dropdown-header">Information Use</label>
+            <div class="dropdown-content">
+                <p>We use the information collected primarily to process the task for which you visited the website. Data collected in the UK is held in accordance with the Data Protection Act. All reasonable precautions are taken to prevent unauthorized access to this information.</p>
+            </div>
+        </div>
+
+        <div class="dropdown-section">
+            <input type="checkbox" id="cookies">
+            <label for="cookies" class="dropdown-header">Cookies</label>
+            <div class="dropdown-content">
+                <p>Your Internet browser has the in-built facility for storing small files - "cookies" - that hold information which allows a website to recognize your account. Our website takes advantage of this facility to enhance your experience.</p>
+            </div>
+        </div>
+
+        <h3>Health & Safety Policy</h3>
+        <p>Arya Game Shop is committed to providing a safe and positive experience for all users. Our app:</p>
+        <ul>
+            <li>Does not contain any harmful, violent, or explicit content</li>
+            <li>Is designed to promote positive mental health and well-being</li>
+            <li>Includes age-appropriate content with clear age ratings</li>
+            <li>Encourages regular breaks and healthy gaming habits</li>
+            <li>Undergoes regular content audits by our safety team</li>
+        </ul>
+
+        <h3>Refund Policy</h3>
+        <p>We offer refunds under the following conditions:</p>
+        <ul>
+            <li><strong>Failed Orders:</strong> Full refunds (minus payment gateway charges) for verified failed transactions</li>
+            <li><strong>Processing Time:</strong> 7-10 business days for refund processing</li>
+        </ul>
+        
+        <div class="dropdown-section">
+            <input type="checkbox" id="refund-details">
+            <label for="refund-details" class="dropdown-header">Refund Details</label>
+            <div class="dropdown-content">
+                <p><strong>Refund Charges:</strong></p>
+                <ul>
+                    <li>2.5% deduction for UPI transactions</li>
+                    <li>3% deduction for credit/debit card payments</li>
+                </ul>
+                <p><strong>To Request a Refund:</strong></p>
+                <ol class="refund-steps">
+                    <li>Contact us within 48 hours of transaction</li>
+                    <li>Provide transaction ID and proof of payment failure</li>
+                    <li>Allow 24-48 hours for investigation</li>
+                </ol>
+            </div>
+        </div>
+
+        <h3>Contacting Us</h3>
+        <p>If you have any questions about our policies, please contact us:</p>
+        <ul>
+            <li>Email: <a href="mailto:brajaranjankhan@gmail.com">mailto:brajaranjankhan@gmail.com</a></li>
+            <li>Phone: <strong>+91 93829 27190</strong></li>
+        </ul>
+
+    </main>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <footer>
+        © 2025 Arya Game Shop. All rights reserved.
+    </footer>
+
+    <script>
+        // Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollBtn = document.querySelector('.scroll-top');
+            scrollBtn.classList.toggle('show', window.scrollY > 300);
+        });
+
+        // Smooth dropdown animation
+        document.querySelectorAll('.dropdown-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
