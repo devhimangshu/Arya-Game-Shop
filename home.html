@@ -108,6 +108,15 @@
             box-shadow: 0 6px 20px 0 rgba(34, 197, 94, 0.5);
         }
 
+        .btn-slate {
+            background-color: #334155;
+            box-shadow: 0 4px 14px 0 rgba(51, 65, 85, 0.4);
+        }
+        .btn-slate:hover {
+            background-color: #1e293b;
+            box-shadow: 0 6px 20px 0 rgba(51, 65, 85, 0.5);
+        }
+
         /* Hero Background with YouTube Video */
         .hero-bg {
             position: relative;
@@ -189,6 +198,18 @@
         .screenshot-gallery:hover {
             animation-play-state: paused;
         }
+        .app-screenshot {
+            height: 280px;
+            width: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+        }
+        @media (max-width: 768px) {
+            .app-screenshot {
+                height: 200px;
+            }
+        }
 
         /* Tilt Cards */
         .tilt-card {
@@ -267,22 +288,43 @@
         .icon-row.scroll-2 { animation: scroll-left 65s linear infinite reverse; }
         .icon-row.scroll-3 { animation: scroll-left 45s linear infinite; }
 
-        /* Spotlight */
-        .spotlight {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: width 0.3s, height 0.3s;
+        /* Custom Mouse Pointer */
+        @media (pointer: fine) {
+            body, a, button, input, select {
+                cursor: none !important;
+            }
         }
-        @media (max-width: 1023px) {
-            .spotlight { display: none; }
+        .cursor-arrow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 32px; height: 32px;
+            pointer-events: none;
+            z-index: 9999;
+            display: none;
+            transform-origin: top left;
+        }
+        .cursor-highlight {
+            position: fixed;
+            top: 0; left: 0;
+            width: 48px; height: 48px;
+            background: rgba(15, 23, 42, 0.15); /* Semi-transparent dark circle */
+            border: 2px solid rgba(251, 191, 36, 0.9); /* Yellow outline */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            display: none;
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+        }
+        .cursor-highlight.active {
+            width: 64px;
+            height: 64px;
+            background: rgba(251, 191, 36, 0.15);
+            border-color: rgba(251, 191, 36, 1);
+        }
+        @media (pointer: fine) {
+            .cursor-arrow, .cursor-highlight {
+                display: block;
+            }
         }
 
         /* Reveal on Scroll */
@@ -323,8 +365,14 @@
 </head>
 <body class="antialiased">
 
-    <!-- Cursor Spotlight -->
-    <div class="spotlight"></div>
+    <!-- Modern Custom Cursor -->
+    <div class="cursor-highlight"></div>
+    <div class="cursor-arrow">
+        <svg viewBox="0 0 24 24" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <!-- Modern Cursor Path, drawn with amber fill and dark border -->
+            <path d="M2 2 L16 8 L10 10 L8 17 Z" fill="#FBBF24" stroke="#1F2937" stroke-width="1.5" stroke-linejoin="round" />
+        </svg>
+    </div>
     
     <!-- Preloader -->
     <div class="preloader">
@@ -336,9 +384,8 @@
         <div class="container mx-auto px-6 max-w-7xl h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
                 <img src="http://aryagameshop.in/logo.png" alt="Logo" class="h-12 w-12 object-contain rounded-xl group-hover:scale-105 transition-transform">
-                <!-- Change Brand Name Here -->
                 <span class="text-2xl font-black tracking-tight text-gray-900">
-                    Arya <span class="text-brand-cyan">Game Shop</span>
+                    Arya <span class="text-brand-cyan">Shop</span>
                 </span>
             </a>
             
@@ -383,12 +430,16 @@
                         </p>
                         
                         <!-- Fixed Perfect Button Spacing using inline-flex and gap-3 -->
-                        <div class="flex flex-wrap justify-center lg:justify-start gap-5">
-                            <a href="https://aryagameshop.in/%20AryaApp.apk" download="Arya Game Shop" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-full glow-button btn-green text-lg w-full sm:w-auto">
-                                <i class="fa-brands fa-android text-2xl"></i>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                            <a href="https://aryagameshop.in/%20AryaApp.apk" download="Arya Game Shop" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-6 rounded-full glow-button btn-green text-base w-full sm:w-auto">
+                                <i class="fa-brands fa-android text-xl"></i>
                                 <span>Download APK</span>
                             </a>
-                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-full glow-button btn-cyan text-lg w-full sm:w-auto">
+                            <a href="https://play.google.com/store/apps/details?id=com.app.aryagameshop" target="_blank" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-6 rounded-full glow-button btn-slate text-base w-full sm:w-auto">
+                                <i class="fa-brands fa-google-play text-xl"></i>
+                                <span>Play Store</span>
+                            </a>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-6 rounded-full glow-button btn-cyan text-base w-full sm:w-auto">
                                 <i class="fa-solid fa-store text-xl"></i>
                                 <span>Visit WebStore</span>
                             </a>
@@ -462,14 +513,37 @@
             </div>
         </section>
 
+        <!-- App Screenshots Carousel Section -->
+        <section class="pt-10 pb-6 overflow-hidden bg-brand-bg" data-reveal>
+            <div class="text-center mb-8 px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Explore the App</h2>
+                <p class="text-gray-500 font-medium">A seamless experience designed for gamers.</p>
+            </div>
+            <div class="gallery-wrap">
+                <div class="screenshot-gallery items-center">
+                    <!-- Original Set -->
+                    <img src="https://play-lh.googleusercontent.com/DSTaJBC0N-i1sp0dfZyGeS79RHy1XTD5qaIvuNoqJIM178oxPUqm-ZpTmbfJyBy1zN1yZVTAlLA_IRa6r6E9=w1052-h592-rw" alt="App Screenshot" class="app-screenshot">
+                    <img src="https://play-lh.googleusercontent.com/s-W2a9sTUYx72lJSIYyQbkpOwD9xzlLtGrqL2aEU9XQw6mMmsK3S4C6ePkrS22Ia7yzj6g_qmDMoaJ5lUc-O=w1052-h592-rw" alt="App Screenshot" class="app-screenshot">
+                    <img src="https://play-lh.googleusercontent.com/N5G5FslzPJs0tqsvwxH8PMeecqmLdR55KpnHq1Mi4S2ocmrq2s7GWHmr-x8hKiobrKb5vdeJrTaTwj8ITVe9=w1052-h592-rw" alt="App Screenshot" class="app-screenshot">
+                    <img src="https://play-lh.googleusercontent.com/3qm2Y5tk_iE_0EbP3Eg5TPF1pikzhoHunBM-seD-QOhaPX5qkNwPWGwUYB_oUYbKJWjusY2e2U3ZqW8LVOCZzQ=w1052-h592-rw" alt="App Screenshot" class="app-screenshot">
+                    
+                    <!-- Duplicated Set for infinite loop -->
+                    <img src="https://play-lh.googleusercontent.com/DSTaJBC0N-i1sp0dfZyGeS79RHy1XTD5qaIvuNoqJIM178oxPUqm-ZpTmbfJyBy1zN1yZVTAlLA_IRa6r6E9=w1052-h592-rw" alt="App Screenshot" class="app-screenshot" aria-hidden="true">
+                    <img src="https://play-lh.googleusercontent.com/s-W2a9sTUYx72lJSIYyQbkpOwD9xzlLtGrqL2aEU9XQw6mMmsK3S4C6ePkrS22Ia7yzj6g_qmDMoaJ5lUc-O=w1052-h592-rw" alt="App Screenshot" class="app-screenshot" aria-hidden="true">
+                    <img src="https://play-lh.googleusercontent.com/N5G5FslzPJs0tqsvwxH8PMeecqmLdR55KpnHq1Mi4S2ocmrq2s7GWHmr-x8hKiobrKb5vdeJrTaTwj8ITVe9=w1052-h592-rw" alt="App Screenshot" class="app-screenshot" aria-hidden="true">
+                    <img src="https://play-lh.googleusercontent.com/3qm2Y5tk_iE_0EbP3Eg5TPF1pikzhoHunBM-seD-QOhaPX5qkNwPWGwUYB_oUYbKJWjusY2e2U3ZqW8LVOCZzQ=w1052-h592-rw" alt="App Screenshot" class="app-screenshot" aria-hidden="true">
+                </div>
+            </div>
+        </section>
+
         <!-- Product Gallery Section -->
-        <section id="products" class="section-container" data-reveal>
+        <section id="products" class="section-container pt-8" data-reveal>
             <div class="text-center mb-10">
                 <h2 class="text-4xl font-black text-gray-900 mb-4">Available Credits</h2>
                 <p class="text-gray-600 font-medium">Get instant delivery for your favorite games.</p>
             </div>
             
-            <div class="gallery-wrap">
+            <div class="gallery-wrap pt-0">
                 <div class="screenshot-gallery items-center">
                     <!-- Gallery Items (Using Vanilla Tilt for perfect framing without cutoff) -->
                     <!-- Item 1 -->
@@ -716,7 +790,6 @@
                 <div class="md:col-span-1">
                     <div class="flex items-center mb-6">
                         <img src="http://aryagameshop.in/logo.png" alt="Logo" class="h-12 w-12 rounded-xl mr-3 bg-white p-1">
-                        <!-- Editable brand name -->
                         <span class="text-2xl font-black text-white">Arya Shop</span>
                     </div>
                     <p class="text-sm text-slate-400 font-medium leading-relaxed">
@@ -759,6 +832,9 @@
                     <a href="https://aryagameshop.in/%20AryaApp.apk" download="Arya Game Shop" class="inline-flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full glow-button btn-green text-sm">
                         <i class="fa-brands fa-android text-lg"></i> <span>Download APK</span>
                     </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.app.aryagameshop" target="_blank" class="inline-flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full glow-button btn-slate text-sm">
+                        <i class="fa-brands fa-google-play text-base"></i> <span>Play Store</span>
+                    </a>
                     <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full glow-button btn-cyan text-sm">
                         <i class="fa-solid fa-store text-base"></i> <span>Open WebStore</span>
                     </a>
@@ -784,12 +860,44 @@
                 }, 500); // Small delay to let animations sync
             });
 
-            // Cursor Spotlight
-            const spotlight = document.querySelector('.spotlight');
-            if (window.innerWidth > 1023) {
+            // Modern Custom Cursor Logic
+            const cursorArrow = document.querySelector('.cursor-arrow');
+            const cursorHighlight = document.querySelector('.cursor-highlight');
+            
+            if (window.matchMedia('(pointer: fine)').matches && cursorArrow && cursorHighlight) {
+                let mouseX = window.innerWidth / 2;
+                let mouseY = window.innerHeight / 2;
+                let highlightX = mouseX;
+                let highlightY = mouseY;
+
                 document.addEventListener('mousemove', (e) => {
-                    spotlight.style.left = e.pageX + 'px';
-                    spotlight.style.top = e.pageY + 'px';
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    
+                    // Arrow moves instantly (offset slightly to make the physical tip exactly on the pointer coordinates)
+                    cursorArrow.style.transform = `translate(calc(${mouseX}px - 2px), calc(${mouseY}px - 2px))`;
+                });
+
+                const animateHighlight = () => {
+                    // Circle uses linear interpolation (lerp) for smooth trailing effect
+                    highlightX += (mouseX - highlightX) * 0.15;
+                    highlightY += (mouseY - highlightY) * 0.15;
+                    
+                    cursorHighlight.style.transform = `translate(calc(${highlightX}px - 50%), calc(${highlightY}px - 50%))`;
+                    
+                    requestAnimationFrame(animateHighlight);
+                };
+                animateHighlight();
+
+                // Add expansion effects on hover
+                const interactiveElements = document.querySelectorAll('a, button, .tilt-card, .faq-question');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorHighlight.classList.add('active');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursorHighlight.classList.remove('active');
+                    });
                 });
             }
 
