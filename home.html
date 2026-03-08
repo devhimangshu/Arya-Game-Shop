@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags -->
+    <title>Arya Game Shop | Instant Game Credits & Top-Ups</title>
+    <meta name="description" content="Buy Free Fire diamonds, BGMI UC, and other game credits safely. Fast delivery and secure payments at the best prices.">
+    <meta name="keywords" content="buy game credits, free fire diamonds, bgmi uc, fast game top up, secure game store">
+    <meta name="author" content="Arya Game Shop">
+
+    <!-- Favicon -->
+    <link rel="icon" href="http://aryagameshop.in/logo.png">
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#06b6d4',
+                            cyanHover: '#0891b2',
+                            green: '#22c55e',
+                            greenHover: '#16a34a',
+                            slate: '#334155',
+                            slateHover: '#1e293b',
+                            bg: '#F7F9FC',
+                            text: '#1F2937'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-reverse': 'float-reverse 7s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'float-reverse': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F9FC;
+            color: #1F2937;
+            overflow-x: hidden;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 4rem 1.5rem;
+        }
+
+        /* Perfectly Spaced Glowing Buttons */
+        .glow-button {
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(0,0,0, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-button:hover {
+            transform: translateY(-3px);
+        }
+        .glow-button i {
+            transition: transform 0.3s ease;
+        }
+        .glow-button:hover i {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        
+        .btn-cyan {
+            background-color: #06b6d4;
+            box-shadow: 0 4px 14px 0 rgba(6, 182, 212, 0.4);
+        }
+        .btn-cyan:hover {
+            background-color: #0891b2;
+            box-shadow: 0 6px 20px 0 rgba(6, 182, 212, 0.5);
+        }
+
+        .btn-green {
+            background-color: #22c55e;
+            box-shadow: 0 4px 14px 0 rgba(34, 197, 94, 0.4);
+        }
+        .btn-green:hover {
+            background-color: #16a34a;
+            box-shadow: 0 6px 20px 0 rgba(34, 197, 94, 0.5);
+        }
+
+        /* Hero Background with YouTube Video */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+        .hero-bg > .section-container {
+            padding-top: 10rem;
+            padding-bottom: 8rem;
+        }
+        .hero-bg > * {
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* YouTube Video CSS Hack for perfect edge-to-edge background */
+        .video-wrapper {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none; overflow: hidden;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100vw; height: 56.25vw; /* 16:9 Aspect Ratio */
+            min-height: 100vh; min-width: 177.77vh; 
+            /* Scale 1.2 removes black letterboxing and YouTube UI artifacts entirely */
+            transform: translate(-50%, -50%) scale(1.2);
+            border: none;
+        }
+        
+        /* Dark Gradient Overlay for perfect text visibility */
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(6, 182, 212, 0.4) 100%);
+        }
+
+        /* Text Gradients */
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #67e8f9, #ffffff, #67e8f9);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGradient 4s ease infinite;
+        }
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Wave Divider */
+        .wave-divider {
+            position: relative;
+            z-index: 4;
+            margin-top: -2px;
+        }
+
+        /* Scrolling Galleries */
+        .gallery-wrap {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            padding: 2rem 0;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .screenshot-gallery {
+            display: flex;
+            gap: 1.5rem;
+            width: fit-content;
+            animation: scroll 40s linear infinite;
+        }
+        .screenshot-gallery:hover {
+            animation-play-state: paused;
+        }
+
+        /* Tilt Cards */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
+
+        /* Rating Bars */
+        .rating-bar-bg { background-color: #e5e7eb; border-radius: 9999px; height: 0.5rem; width: 100%; }
+        .rating-bar-fill { background-image: linear-gradient(to right, #22d3ee, #0891b2); border-radius: 9999px; height: 100%; }
+        
+        /* FAQ Accordion */
+        .faq-item { background-color: #ffffff; border-radius: 0.75rem; margin-bottom: 1rem; overflow: hidden; border: 1px solid #e5e7eb; transition: all 0.3s ease; }
+        .faq-question { cursor: pointer; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; padding: 0 1.5rem; }
+        .faq-answer p { padding-bottom: 1.5rem; color: #4b5563; line-height: 1.6; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-arrow { transition: transform 0.3s ease; }
+
+        /* Animations & Effects */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); }
+            50% { box-shadow: 0 0 60px rgba(6, 182, 212, 0.8); }
+        }
+        .app-icon-glow {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        /* Features Section with Scrolling Background */
+        .features-section {
+            position: relative;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+        .features-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+            z-index: 1;
+        }
+        .features-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+        .scrolling-icons-bg {
+            position: absolute;
+            inset: -50%;
+            z-index: 0;
+            transform: rotate(-20deg) scale(1.5);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            opacity: 0.15;
+        }
+        .icon-row {
+            display: flex;
+            gap: 1.5rem;
+            width: fit-content;
+        }
+        .game-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 1.5rem;
+            object-fit: contain;
+            background-color: rgba(255,255,255,0.05);
+            flex-shrink: 0;
+            padding: 5px;
+        }
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .icon-row.scroll-1 { animation: scroll-left 50s linear infinite; }
+        .icon-row.scroll-2 { animation: scroll-left 65s linear infinite reverse; }
+        .icon-row.scroll-3 { animation: scroll-left 45s linear infinite; }
+
+        /* Spotlight */
+        .spotlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            transition: width 0.3s, height 0.3s;
+        }
+        @media (max-width: 1023px) {
+            .spotlight { display: none; }
+        }
+
+        /* Reveal on Scroll */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background-color: #0f172a;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader img {
+            animation: pulse-logo 1.5s infinite ease-in-out;
+            border-radius: 1.5rem;
+        }
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(6, 182, 212, 0.6); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Cursor Spotlight -->
+    <div class="spotlight"></div>
+    
+    <!-- Preloader -->
+    <div class="preloader">
+        <img src="http://aryagameshop.in/logo.png" alt="Loading..." class="w-24 h-24 bg-white p-2">
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 max-w-7xl h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="http://aryagameshop.in/logo.png" alt="Logo" class="h-12 w-12 object-contain rounded-xl group-hover:scale-105 transition-transform">
+                <!-- Change Brand Name Here -->
+                <span class="text-2xl font-black tracking-tight text-gray-900">
+                    Arya <span class="text-brand-cyan">Game Shop</span>
+                </span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-gray-600">
+                <a href="#home" class="hover:text-brand-cyan transition-colors">Home</a>
+                <a href="#products" class="hover:text-brand-cyan transition-colors">Credits</a>
+                <a href="#faq" class="hover:text-brand-cyan transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-brand-cyan text-white font-bold rounded-full hover:bg-brand-cyanHover transition-colors shadow-lg">
+                    <span>WebStore</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with YouTube Background -->
+        <section id="home" class="hero-bg">
+            <!-- YouTube Video Background -->
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/MMUIRxruxfo?autoplay=1&mute=1&loop=1&playlist=MMUIRxruxfo&controls=0&showinfo=0&autohide=1&disablekb=1&modestbranding=1" title="Background Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <!-- Overlay to make text readable -->
+            <div class="video-overlay"></div>
+
+            <div class="section-container" data-parallax>
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    
+                    <!-- Hero Info (Left) -->
+                    <div class="flex-grow text-center lg:text-left lg:w-1/2 relative z-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-cyan-500/20 border border-cyan-500/50 text-cyan-400 text-sm font-bold tracking-wide backdrop-blur-sm">
+                            <i class="fa-solid fa-bolt"></i> Instant Top-Up Service
+                        </div>
+                        
+                        <h1 class="text-5xl md:text-7xl font-black text-white animated-gradient-text leading-tight tracking-tight mb-6">
+                            Arya Game Shop
+                        </h1>
+                        <p class="text-xl text-gray-200 font-medium max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed drop-shadow-md">
+                            Buy game credits fast and secure. We offer genuine top-ups at the best prices with instant access.
+                        </p>
+                        
+                        <!-- Fixed Perfect Button Spacing using inline-flex and gap-3 -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-5">
+                            <a href="https://aryagameshop.in/%20AryaApp.apk" download="Arya Game Shop" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-full glow-button btn-green text-lg w-full sm:w-auto">
+                                <i class="fa-brands fa-android text-2xl"></i>
+                                <span>Download APK</span>
+                            </a>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-3 font-bold py-4 px-8 rounded-full glow-button btn-cyan text-lg w-full sm:w-auto">
+                                <i class="fa-solid fa-store text-xl"></i>
+                                <span>Visit WebStore</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- God-Level Creative Floating Game Assets Composition (Right) -->
+                    <div class="lg:w-1/2 w-full flex justify-center items-center relative h-[400px] md:h-[500px] mt-10 lg:mt-0 z-10">
+                        
+                        <!-- Center App Logo (Stable Tilt Card) -->
+                        <div class="absolute z-30 tilt-card app-icon-glow w-40 h-40 md:w-56 md:h-56 rounded-[2rem] shadow-2xl flex items-center justify-center bg-white p-4">
+                            <img src="http://aryagameshop.in/logo.png" alt="Arya Game Shop Logo" class="w-full h-full object-contain rounded-[1.5rem]">
+                        </div>
+
+                        <!-- Floating Game Characters around the center logo -->
+                        
+                        <!-- Free Fire Diamond (Top Left) -->
+                        <div class="absolute top-0 left-[5%] md:left-[10%] w-32 md:w-48 z-40 animate-float" style="animation-delay: 0s;">
+                            <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)]">
+                        </div>
+                        
+                        <!-- BGMI Character (Bottom Left) -->
+                        <div class="absolute bottom-5 left-0 md:-left-5 w-32 md:w-48 z-20 animate-float-reverse" style="animation-delay: 1.5s;">
+                            <img src="https://totalpng.com//public/uploads/preview/pubg-character-png-transparent-picture-11669375346hym6nwpbkz.png" onerror="this.style.display='none'" class="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)]">
+                        </div>
+
+                        <!-- Call of Duty Character (Top Right) -->
+                        <div class="absolute -top-5 right-[5%] md:right-[10%] w-32 md:w-48 z-20 animate-float" style="animation-delay: 0.7s;">
+                            <img src="https://freepngimg.com/thumb/call_of_duty/11-2-call-of-duty-png-clipart.png" onerror="this.style.display='none'" class="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)] scale-x-[-1]">
+                        </div>
+
+                        <!-- Clash of Clans / Gift Cards (Bottom Right) -->
+                        <div class="absolute bottom-0 right-5 md:right-0 w-28 md:w-40 z-40 animate-float-reverse" style="animation-delay: 2.2s;">
+                            <img src="https://freepngimg.com/thumb/clash_of_clans/27792-8-clash-of-clans-image.png" onerror="this.src='https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png'" class="w-full h-full object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.8)]">
+                        </div>
+                        
+                        <!-- Glowing Backlight behind composition -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/30 blur-[100px] rounded-full z-10 pointer-events-none"></div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 text-center text-white border-t border-white/10 pt-10 relative z-10">
+                    <div>
+                        <div class="flex items-center justify-center gap-2 mb-1">
+                            <p class="text-3xl font-black count-up" data-target="49" data-format="decimal">0.0</p>
+                            <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-300">Trusted Ratings</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black mb-1 count-up" data-target="300000" data-format="K">0K+</p>
+                        <p class="text-sm font-medium text-gray-300">Happy Gamers</p>
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 mx-auto font-black text-xl border-2 border-cyan-400 text-cyan-400 rounded-lg flex items-center justify-center mb-1 bg-cyan-900/50 backdrop-blur-sm">3+</div>
+                        <p class="text-sm font-medium text-gray-300">Rated for 3+</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-green-400 mb-1">#1</p>
+                        <p class="text-sm font-medium text-gray-300">Game Store App</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wave Divider -->
+            <div class="wave-divider">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="block w-full h-auto">
+                    <path fill="#F7F9FC" d="M1440,50 C1200,50 960,0 720,0 C480,0 240,50 0,50 L0,100 L1440,100 L1440,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Product Gallery Section -->
+        <section id="products" class="section-container" data-reveal>
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-gray-900 mb-4">Available Credits</h2>
+                <p class="text-gray-600 font-medium">Get instant delivery for your favorite games.</p>
+            </div>
+            
+            <div class="gallery-wrap">
+                <div class="screenshot-gallery items-center">
+                    <!-- Gallery Items (Using Vanilla Tilt for perfect framing without cutoff) -->
+                    <!-- Item 1 -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0">
+                        <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" alt="Free Fire" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">Free Fire Diamonds</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0">
+                        <img src="https://totalpng.com//public/uploads/preview/pubg-character-png-transparent-picture-11669375346hym6nwpbkz.png" onerror="this.src='https://html-generator.com/uploads/images/2023/12/31/29184A58I_Z7LLZ.png'" alt="BGMI" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">BGMI UC</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0">
+                        <img src="https://freepngimg.com/thumb/call_of_duty/11-2-call-of-duty-png-clipart.png" onerror="this.src='https://html-generator.com/uploads/images/2023/12/31/29184A58I_Z7LLZ.png'" alt="Call of Duty" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">Call of Duty</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0">
+                        <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" alt="Gift Cards" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">Gift Cards</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0">
+                        <img src="https://freepngimg.com/thumb/clash_of_clans/27792-8-clash-of-clans-image.png" onerror="this.src='https://html-generator.com/uploads/images/2023/12/31/29184A58I_Z7LLZ.png'" alt="Clash of Clans" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">Clash of Clans</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Set for Seamless Scroll -->
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0" aria-hidden="true">
+                        <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" alt="Free Fire" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">Free Fire Diamonds</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tilt-card w-64 h-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col items-center justify-between flex-shrink-0" aria-hidden="true">
+                        <img src="https://totalpng.com//public/uploads/preview/pubg-character-png-transparent-picture-11669375346hym6nwpbkz.png" onerror="this.src='https://html-generator.com/uploads/images/2023/12/31/29184A58I_Z7LLZ.png'" alt="BGMI" class="h-40 object-contain drop-shadow-lg">
+                        <div class="text-center w-full">
+                            <h3 class="font-bold text-lg mb-1">BGMI UC</h3>
+                            <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="block w-full py-2 mt-2 bg-gray-50 text-brand-cyan font-bold rounded-lg border border-gray-200 hover:bg-brand-cyan hover:text-white transition-colors">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section with Seamless Background -->
+        <section class="features-section py-20 mt-10">
+            <!-- Scrolling background pattern using your assets -->
+            <div class="scrolling-icons-bg" aria-hidden="true">
+                <div class="icon-row scroll-1">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                </div>
+                <div class="icon-row scroll-2">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                </div>
+                <div class="icon-row scroll-3">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                    <img src="https://jockeronline.com/wp-content/uploads/2025/07/daimond-removebg-preview.png" class="game-icon">
+                    <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" class="game-icon">
+                </div>
+            </div>
+
+            <div class="features-content-wrapper section-container text-center">
+                <h2 class="text-4xl font-black mb-4 text-white">Why Choose Us?</h2>
+                <p class="text-gray-300 font-medium mb-16 max-w-2xl mx-auto" data-reveal>Get more for your money with instant, secure top-ups for all your favorite games.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10" data-reveal>
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-center bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700 hover:border-brand-cyan transition-colors">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-brand-cyan text-4xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Instant Delivery</h3>
+                        <p class="text-gray-400 text-sm font-medium">Credits delivered in moments to your account.</p>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-center bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700 hover:border-brand-cyan transition-colors">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-brand-cyan text-4xl">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Best Prices</h3>
+                        <p class="text-gray-400 text-sm font-medium">Save money with our daily offers and discounts.</p>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-center bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700 hover:border-brand-cyan transition-colors">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-brand-cyan text-4xl">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Secure Payments</h3>
+                        <p class="text-gray-400 text-sm font-medium">Your data and transactions are completely protected.</p>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex flex-col items-center bg-slate-800/50 backdrop-blur-md p-8 rounded-2xl border border-slate-700 hover:border-brand-cyan transition-colors">
+                        <div class="w-16 h-16 mb-4 flex items-center justify-center text-brand-cyan text-4xl">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2 text-white">Wide Support</h3>
+                        <p class="text-gray-400 text-sm font-medium">We support all major games and platforms globally.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratings Section -->
+        <section class="py-16 bg-gradient-to-br from-cyan-500 to-blue-600">
+            <div class="section-container" data-reveal>
+                <div class="flex flex-col md:flex-row gap-12 items-center bg-white/10 backdrop-blur-lg rounded-3xl p-10 border border-white/20">
+                    <div class="w-full md:w-1/3 text-center text-white">
+                        <p class="text-7xl font-black mb-2">4.9</p>
+                        <div class="flex justify-center gap-1 mb-2">
+                            <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-star text-yellow-400 text-xl"></i>
+                            <i class="fa-solid fa-star-half-stroke text-yellow-400 text-xl"></i>
+                        </div>
+                        <p class="text-white/80 font-medium">Over 35,000 trusted reviews</p>
+                    </div>
+                    
+                    <div class="w-full md:w-2/3 text-white space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-3 font-bold">5</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                            <div class="rating-bar-bg bg-white/30 flex-grow"><div class="rating-bar-fill bg-white" style="width: 85%"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-3 font-bold">4</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                            <div class="rating-bar-bg bg-white/30 flex-grow"><div class="rating-bar-fill bg-white" style="width: 10%"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-3 font-bold">3</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                            <div class="rating-bar-bg bg-white/30 flex-grow"><div class="rating-bar-fill bg-white" style="width: 3%"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-3 font-bold">2</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                            <div class="rating-bar-bg bg-white/30 flex-grow"><div class="rating-bar-fill bg-white" style="width: 1%"></div></div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-3 font-bold">1</span>
+                            <i class="fa-solid fa-star text-yellow-400 text-sm"></i>
+                            <div class="rating-bar-bg bg-white/30 flex-grow"><div class="rating-bar-fill bg-white" style="width: 1%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-container" id="faq">
+            <div class="max-w-3xl mx-auto" data-reveal>
+                <h2 class="text-4xl font-black mb-8 text-center text-gray-900">Quick Answers</h2>
+                <div id="faq-container">
+                    
+                    <div class="faq-item shadow-sm hover:shadow-md">
+                        <div class="faq-question">
+                            <span>Is this service safe to use?</span>
+                            <span class="faq-arrow transform transition-transform duration-300 text-brand-cyan">
+                                <i class="fa-solid fa-chevron-down text-lg"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes. We prioritize your account security. We only require your in-game User ID for top-ups. We will never ask for your password. All payments are processed through secure gateways.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item shadow-sm hover:shadow-md">
+                        <div class="faq-question">
+                            <span>How long does delivery take?</span>
+                            <span class="faq-arrow transform transition-transform duration-300 text-brand-cyan">
+                                <i class="fa-solid fa-chevron-down text-lg"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our system is designed for instant delivery. In most cases, you will receive your in-game credits within minutes of completing your purchase.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item shadow-sm hover:shadow-md">
+                        <div class="faq-question">
+                            <span>How can I buy credits?</span>
+                            <span class="faq-arrow transform transition-transform duration-300 text-brand-cyan">
+                                <i class="fa-solid fa-chevron-down text-lg"></i>
+                            </span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can purchase directly from our WebStore or by downloading our Android app. Select your game, enter your game ID, choose a payment method, and complete the process.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 mt-10">
+        <div class="section-container pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <img src="http://aryagameshop.in/logo.png" alt="Logo" class="h-12 w-12 rounded-xl mr-3 bg-white p-1">
+                        <!-- Editable brand name -->
+                        <span class="text-2xl font-black text-white">Arya Shop</span>
+                    </div>
+                    <p class="text-sm text-slate-400 font-medium leading-relaxed">
+                        Your one-stop shop for affordable game credits and instant top-ups. Get your gaming needs sorted quickly and safely.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-brand-cyan transition-colors">Home</a></li>
+                        <li><a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="hover:text-brand-cyan transition-colors">WebStore</a></li>
+                        <li><a href="#faq" class="hover:text-brand-cyan transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Legal</h3>
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li><a href="/privacy" class="hover:text-brand-cyan transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-cyan transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-cyan transition-colors">Data Safety</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-cyan hover:text-white transition-all"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500 hover:text-white transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-red-500 hover:text-white transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Download CTA Bottom -->
+            <div class="mt-12 border-t border-slate-800 pt-10">
+                <h3 class="font-bold text-white mb-6 text-center uppercase tracking-wider text-sm">Start Purchasing Now</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://aryagameshop.in/%20AryaApp.apk" download="Arya Game Shop" class="inline-flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full glow-button btn-green text-sm">
+                        <i class="fa-brands fa-android text-lg"></i> <span>Download APK</span>
+                    </a>
+                    <a href="https://store.shoopy.in/arya-game-shop" target="_blank" class="inline-flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full glow-button btn-cyan text-sm">
+                        <i class="fa-solid fa-store text-base"></i> <span>Open WebStore</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center text-sm font-medium text-slate-500">
+                <p>&copy; 2021-2026 Arya Game Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Preloader
+            const preloader = document.querySelector('.preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.classList.add('loaded');
+                }, 500); // Small delay to let animations sync
+            });
+
+            // Cursor Spotlight
+            const spotlight = document.querySelector('.spotlight');
+            if (window.innerWidth > 1023) {
+                document.addEventListener('mousemove', (e) => {
+                    spotlight.style.left = e.pageX + 'px';
+                    spotlight.style.top = e.pageY + 'px';
+                });
+            }
+
+            // Reveal on Scroll
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-reveal]').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // FAQ Accordion
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqContainer.addEventListener('click', (e) => {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const item = question.parentElement;
+                        const allItems = faqContainer.querySelectorAll('.faq-item');
+                        const wasOpen = item.classList.contains('open');
+                        
+                        allItems.forEach(otherItem => {
+                            otherItem.classList.remove('open');
+                        });
+
+                        if (!wasOpen) {
+                            item.classList.add('open');
+                        }
+                    }
+                });
+            }
+
+            // Animated Counter
+            const counters = document.querySelectorAll('.count-up');
+            const counterObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const format = counter.dataset.format;
+                        const duration = 2000;
+                        const frameDuration = 1000 / 60;
+                        const totalFrames = Math.round(duration / frameDuration);
+                        let frame = 0;
+
+                        const easeOutQuad = t => t * (2 - t);
+                        const animateCount = () => {
+                            frame++;
+                            const progress = easeOutQuad(frame / totalFrames);
+                            const currentCount = target * progress;
+
+                            if (format === 'K') {
+                                counter.innerText = (currentCount / 1000).toFixed(0) + 'K+';
+                            } else if (format === 'decimal') {
+                                counter.innerText = (currentCount / 10).toFixed(1);
+                            } else {
+                                counter.innerText = Math.round(currentCount).toLocaleString();
+                            }
+
+                            if (frame < totalFrames) {
+                                requestAnimationFrame(animateCount);
+                            } else {
+                                if (format === 'K') {
+                                    counter.innerText = (target / 1000).toFixed(0) + 'K+';
+                                } else if (format === 'decimal') {
+                                    counter.innerText = (target / 10).toFixed(1);
+                                } else {
+                                    counter.innerText = target.toLocaleString();
+                                }
+                            }
+                        };
+                        
+                        requestAnimationFrame(animateCount);
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.8 }); 
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            // Vanilla Tilt Initialization
+            VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15,
+                perspective: 1000,
+            });
+
+        });
+    </script>
+</body>
+</html>
